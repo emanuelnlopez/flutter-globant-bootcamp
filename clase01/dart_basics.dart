@@ -1,10 +1,10 @@
 /* Hello World! ***************************************************************/
 
-void main() {
-  print('Hello world');
-}
+// void main() {
+//   print('Hello world');
+// }
 
-/// Comentarios
+/* Comentarios ****************************************************************/
 
 // This is a normal, one-line comment.
 
@@ -95,57 +95,63 @@ Comments like these are also supported.
 //   print('1. Operador de acceso condicional (?.)');
 
 //   String? name;
-//   print(name?.length); // Devuelve null en lugar de lanzar un error
+//   // Devuelve null en lugar de lanzar un error
+//   print('$name tiene ${name?.length} caracteres');
 //   name = 'John';
-//   print(name?.length);
+//   print('$name tiene ${name?.length} caracteres');
 
-//   print('2. Operador de asignación condicional (??=)');
-
-//   name ??= "Usuario";
-//   print(name); // "Usuario" si nombre es null
-
-//   print('3. Operador de fusión con null (??)');
+//   print('\n2. Operador de asignación condicional (??=)');
 
 //   name = null;
-//   print(name ?? "Invitado"); // "Invitado" si nombre es null
+//   name ??= "Usuario";
+//   print('name tiene el valor $name'); // "Usuario" si nombre es null
 
-//   print('4. Operador de null assertion (!)');
+//   print('\n3. Operador de fusión con null (??)');
 
-//   String? nombre;
-//   print(nombre!.length); // Lanzará una excepción si nombre es null
+//   name = null;
+//   // "Invitado" si nombre es null
+//   print('name tiene el valor ${name ?? "Invitado"}');
 
-//   print('5. Operador de cascada condicional (?..)');
+//   // print('\n4. Operador de null assertion (!)');
+
+//   // String? nombre;
+//   // print(nombre!.length); // Lanzará una excepción si nombre es null
+
+//   print('\n5. Operador de cascada condicional (?..)');
 
 //   var lista;
+//   // var lista = [];
 //   lista
 //     ?..add(1)
 //     ..add(2); // No hace nada si lista es null
 
-//   print(lista);
+//   print('El contenido de lista es : $lista');
 
-//   print('6. Operador de indexado seguro (?[])');
+//   print('\n6. Operador de indexado seguro (?[])');
 
 //   Map? map;
-//   print(map?['clave']); // null si map es null
+//   // Map? map = {'clave' : 'Hola Mundo!'};
+//   print('map["clave"] tiene el valor ${map?["clave"]}'); // null si map es null
 
-//   print('7. Operador de propagación condicional (...?)');
+//   print('\n7. Operador de propagación condicional (...?)');
 
-//   List<int>? otraLista = [1, 2, 3];
+//   List<int>? otraLista;
+//   // List<int>? otraLista = [1, 2, 3];
 //   List<int> otraListaMas = [
 //     0,
 //     ...?otraLista
 //   ]; // Si otraLista es null, no se agrega nada
 
-//   print(otraListaMas);
+//   print('La unión de $otraLista y $otraListaMas es igual a ${otraListaMas}');
 // }
 
 /* Funciones y métodos ********************************************************/
 
 // void sumar(int a, int b) {
-//   print(a + b);
+//   print('$a + $b = ${a + b}');
 // }
 
-// void restar(int a, int b) => print(a - b);
+// void restar(int a, int b) => print('$a - $b = ${a - b}');
 
 // void main() {
 //   sumar(5, 3);
@@ -158,21 +164,21 @@ Comments like these are also supported.
 //   print('1. Parámetros Posicionales Obligatorios');
 
 //   void sumar(int a, int b) {
-//     print(a + b);
+//     print('$a + $b = ${a + b}');
 //   }
 
-//   sumar(2, 3); // 5
+//   sumar(2, 3);
 
-//   print('2. Parámetros Posicionales Opcionales');
+//   print('\n2. Parámetros Posicionales Opcionales');
 
 //   void mostrarNombre(String nombre, [String? apellido]) {
-//     print('$nombre $apellido');
+//     print('Nombre completo: $nombre $apellido');
 //   }
 
-//   mostrarNombre('Carlos'); // "Carlos null"
-//   mostrarNombre('Carlos', 'Pérez'); // "Carlos Pérez"
+//   mostrarNombre('Carlos'); // Nombre completo: "Carlos null"
+//   mostrarNombre('Carlos', 'Pérez'); // Nombre completo: "Carlos Pérez"
 
-//   print('3. Parámetros Nombrados Opcionales');
+//   print('\n3. Parámetros Nombrados Opcionales');
 
 //   void mostrarDatos({required String nombre, int? edad}) {
 //     print('Nombre: $nombre, Edad: $edad');
@@ -181,7 +187,7 @@ Comments like these are also supported.
 //   mostrarDatos(nombre: 'Carlos'); // "Nombre: Carlos, Edad: null"
 //   mostrarDatos(nombre: 'Carlos', edad: 30); // "Nombre: Carlos, Edad: 30"
 
-//   print('4. Parámetros con Valores por Defecto');
+//   print('\n4. Parámetros con Valores por Defecto');
 
 //   void saludar(String nombre, [String saludo = 'Hola']) {
 //     print('$saludo, $nombre');
@@ -190,26 +196,26 @@ Comments like these are also supported.
 //   saludar('Ana'); // "Hola, Ana"
 //   saludar('Ana', 'Buenos días'); // "Buenos días, Ana"
 
-//   print('5. Parámetros de Función (Función como Parámetro)');
+//   print('\n5. Parámetros de Función (Función como Parámetro)');
 
 //   void ejecutarOperacion(int a, int b, Function operacion) {
-//     print(operacion(a, b));
+//     print('Resultado de la operación: ${operacion(a, b)}');
 //   }
 
 //   int sumarOtraVez(int a, int b) => a + b;
 //   int restar(int a, int b) => a - b;
 
-//   ejecutarOperacion(3, 2, sumarOtraVez); // "5"
-//   ejecutarOperacion(3, 2, restar); // "1"
+//   ejecutarOperacion(3, 2, sumarOtraVez);
+//   ejecutarOperacion(3, 2, restar);
 
-//   print('6. Parámetros de Función (Función nullable como Parámetro)');
+//   print('\n6. Parámetros de Función (Función nullable como Parámetro)');
 
 //   void ejecutarOperacionNullable(int a, int b, [Function? operacion]) {
-//     print(operacion?.call(a, b));
+//     print('Resultado de la operación nullable: ${operacion?.call(a, b)}');
 //   }
 
-//   ejecutarOperacionNullable(3, 2, sumarOtraVez); // "5"
-//   ejecutarOperacionNullable(3, 2); // "1"
+//   ejecutarOperacionNullable(3, 2, sumarOtraVez);
+//   ejecutarOperacionNullable(3, 2);
 // }
 
 /* Control de flujo ***********************************************************/
@@ -217,55 +223,75 @@ Comments like these are also supported.
 // void main() {
 //   print('1. Estructura if y else');
 
-//   void verificarEdad(int edad) {
+//   String verificarEdad(int edad) {
 //     if (edad >= 18) {
-//       print('Es mayor de edad');
+//       return 'mayor de edad';
 //     } else {
-//       print('Es menor de edad');
+//       return 'menor de edad';
 //     }
 //   }
 
-//   verificarEdad(42);
-//   verificarEdad(5);
+//   String verificarEdadCorto(int edad) =>
+//       (edad >= 18) ? 'mayor de edad' : 'menor de edad';
 
-//   print('2. Estructura else if');
+//   var age = 42;
+//   print('con $age años eres: ${verificarEdad(age)}');
+//   age = 5;
+//   print('con $age años eres: ${verificarEdadCorto(age)}');
 
-//   void verificarTemperatura(int temperatura) {
+//   print('\n2. Estructura else if');
+
+//   String verificarTemperatura(int temperatura) {
 //     if (temperatura > 30) {
-//       print('Hace calor');
+//       return 'Hace calor';
 //     } else if (temperatura > 20) {
-//       print('Está templado');
+//       return 'Está templado';
 //     } else {
-//       print('Hace frío');
+//       return 'Hace frío';
 //     }
 //   }
 
-//   verificarTemperatura(60);
-//   verificarTemperatura(25);
-//   verificarTemperatura(10);
+//   var temperatures = [60, 25, 10];
+//   for (final temperature in temperatures) {
+//     print('a $temperature grados: ${verificarTemperatura(temperature)}');
+//   }
 
-//   print('3. Estructura switch');
+//   print('\n3. Estructura switch');
 
-//   void mostrarDia(int dia) {
+//   String mostrarDia(int dia) {
+//     String result;
 //     switch (dia) {
 //       case 1:
-//         print('Lunes');
+//         result = 'Domingo';
 //         break;
 //       case 2:
-//         print('Martes');
+//         result = 'Lunes';
 //         break;
 //       case 3:
-//         print('Miércoles');
+//         result = 'Martes';
+//         break;
+//       case 4:
+//         result = 'Miércoles';
+//         break;
+//       case 5:
+//         result = 'Jueves';
+//         break;
+//       case 6:
+//         result = 'Viernes!';
+//         break;
+//       case 7:
+//         result = 'Sábado';
 //         break;
 //       default:
-//         print('Día no válido');
+//         result = 'NO VÁLIDO';
 //     }
+//     return result;
 //   }
 
-//   mostrarDia(1);
-//   mostrarDia(10);
+//   print('El 1er día de la semana es ${mostrarDia(1)}');
+//   print('El 10mo día de la semana es ${mostrarDia(10)}');
 
-//   print('4. Bucles for');
+//   print('\n4. Bucles for');
 
 //   for (int i = 0; i < 5; i++) {
 //     print('Iteración $i');
@@ -277,7 +303,7 @@ Comments like these are also supported.
 //     print(fruta);
 //   }
 
-//   print('5. Bucle while');
+//   print('\n5. Bucle while');
 
 //   int contador = 0;
 
@@ -286,7 +312,7 @@ Comments like these are also supported.
 //     contador++;
 //   }
 
-//   print('6. Bucle do-while');
+//   print('\n6. Bucle do-while');
 
 //   int numero = 5;
 
@@ -295,7 +321,7 @@ Comments like these are also supported.
 //     numero--;
 //   } while (numero > 0);
 
-//   print('7. Estructura break');
+//   print('\n7. Estructura break');
 
 //   for (int i = 0; i < 5; i++) {
 //     if (i == 3) {
@@ -304,7 +330,7 @@ Comments like these are also supported.
 //     print('i: $i'); // Imprime hasta 2
 //   }
 
-//   print('8. Estructura continue');
+//   print('\n8. Estructura continue');
 
 //   for (int i = 0; i < 5; i++) {
 //     if (i == 2) {
@@ -313,28 +339,27 @@ Comments like these are also supported.
 //     print('i: $i'); // Salta el valor 2
 //   }
 
-//   print('9. Estructura try-catch-finally');
+//   print('\n9. Estructura try-catch-finally');
 
-//   void dividir(int a, int b) {
+//   void ImprimirCaracter(String palabra, int index) {
 //     try {
-//       double resultado = a / b;
-//       print('Resultado: $resultado');
+//       print('El caracter $index de $palabra es: ${palabra[index - 1]}');
 //     } catch (e) {
-//       print('Error: $e');
+//       print('Error $e');
 //     } finally {
 //       print('Operación finalizada');
 //     }
 //   }
 
-//   dividir(4, 2); // "Resultado: 2.0"
-//   dividir(4, 0); // "Error: IntegerDivisionByZeroException"
+//   ImprimirCaracter('Elefante', 5);
+//   ImprimirCaracter('Auto', 5);
 
-//   print('10. Expresión assert');
+//   print('\n10. Expresión assert');
 
 //   int edad = 20;
 //   assert(edad >= 18, 'Debe ser mayor de edad');
 
-//   print('11. Expresión throw');
+//   print('\n11. Expresión throw');
 
 //   void validarEdad(int edad) {
 //     if (edad < 18) {
@@ -348,18 +373,18 @@ Comments like these are also supported.
 
 /* Concurrencia ***************************************************************/
 
-// Future<String> obtenerMensaje() async {
-//   await Future.delayed(Duration(seconds: 2));
-//   return 'Hola, soy un mensaje del futuro';
-// }
+Future<String> obtenerMensaje() async {
+  await Future.delayed(Duration(seconds: 2));
+  return 'Hola, soy un mensaje del futuro';
+}
 
 // void main() async {
 //   obtenerMensaje().then((mensaje) {
 //     print('then: $mensaje');
 //   });
 
-//   String mensaje = await obtenerMensaje();
-//   print('await: $mensaje');
+//   // String mensaje = await obtenerMensaje();
+//   // print('await: $mensaje');
 // }
 
 /* Clases *********************************************************************/
