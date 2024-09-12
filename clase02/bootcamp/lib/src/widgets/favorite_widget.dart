@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:logging/logging.dart';
 
 class FavoriteWidget extends StatefulWidget {
   FavoriteWidget({super.key});
@@ -8,6 +9,7 @@ class FavoriteWidget extends StatefulWidget {
 }
 
 class _FavoriteWidgetState extends State<FavoriteWidget> {
+  final logger = Logger('FavoriteWidget');
   bool _isFavorited = true;
   int _favoriteCount = 41;
 
@@ -25,9 +27,9 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
 
   @override
   Widget build(BuildContext context) {
-//     print('''--------------------------
-//     FavoriteWidget: building...
-// --------------------------''');
+    logger.finest('''--------------------------
+    FavoriteWidget: building...
+--------------------------''');
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:logging/logging.dart';
 
 ///
 /// Catálogo de widgets
@@ -10,6 +11,7 @@ class WidgetDemoScreen extends StatelessWidget {
     required this.title,
   });
 
+  final logger = Logger('WidgetDemoScreen');
   final String title;
 
   @override
@@ -53,12 +55,12 @@ class WidgetDemoScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-                Icon(Icons.star, color: Colors.yellow),
+                Icon(Icons.accessibility_new, color: Colors.yellow),
                 Icon(Icons.favorite, color: Colors.red),
                 IconButton(
                   onPressed: () {
                     /// Lint rule warning: avoid_print
-                    print('IconButton pressed!');
+                    logger.finest('IconButton pressed!');
                   },
                   icon: Icon(Icons.thumb_up, color: Colors.blue),
                 ),
@@ -68,7 +70,7 @@ class WidgetDemoScreen extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 /// Lint rule warning: avoid_print
-                print('ElevatedButton pressed');
+                logger.finest('ElevatedButton pressed');
               },
               child: Text('Click me!'),
             ),
@@ -76,7 +78,7 @@ class WidgetDemoScreen extends StatelessWidget {
             GestureDetector(
               onTap: () {
                 /// Lint rule warning: avoid_print
-                print('GestureDetector pressed');
+                logger.finest('GestureDetector pressed');
               },
               child: Image.network(
                 'https://storage.googleapis.com/cms-storage-bucket/c823e53b3a1a7b0d36a9.png',
@@ -84,16 +86,17 @@ class WidgetDemoScreen extends StatelessWidget {
             ),
             SizedBox(height: 20.0),
             ListTile(
-              leading: Icon(Icons.alarm),
+              // leading: Icon(Icons.alarm),
               title: Text('Título'),
-              subtitle: Text('Subtitulo'),
-              trailing: Icon(Icons.chevron_right),
+              // subtitle: Text('Subtitulo'),
+              // trailing: Icon(Icons.chevron_right),
+              onTap: () {},
             ),
             SizedBox(height: 20.0),
             InkWell(
               onTap: () {
                 /// Lint rule warning: avoid_print
-                print('InkWell pressed');
+                logger.finest('InkWell pressed');
               },
               child: Image.asset('assets/images/dashatars.png'),
             ),
@@ -101,7 +104,6 @@ class WidgetDemoScreen extends StatelessWidget {
             TextField(
               decoration: InputDecoration(
                 labelText: 'Ingrese su nombre',
-                border: OutlineInputBorder(),
               ),
             ),
             SizedBox(height: 20.0),
@@ -113,7 +115,7 @@ class WidgetDemoScreen extends StatelessWidget {
                   color: Colors.blue,
                 ),
                 Positioned(
-                  bottom: 10,
+                  top: 10,
                   right: 10,
                   child: Text(
                     'Encima!',

@@ -1,5 +1,4 @@
 import 'package:bootcamp/src/index_screen.dart';
-import 'package:bootcamp/src/my_home_page.dart';
 import 'package:flutter/material.dart';
 
 /// MyApp es un widget de tipo StatelessWidget,
@@ -29,8 +28,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      // home: IndexScreen(),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: IndexScreen(),
     );
   }
 }

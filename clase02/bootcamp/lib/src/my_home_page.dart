@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:logging/logging.dart';
 
 /// `MyHomePage` es un widget de tipo `StatefulWidget`,
 /// puede cambiar su estado dinámicamente
@@ -22,7 +23,14 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  final logger = Logger('MyHomePage');
+  late int _counter;
+
+  @override
+  void initState() {
+    super.initState();
+    _counter = 5;
+  }
 
   void _incrementCounter() {
     setState(() {
@@ -31,24 +39,31 @@ class _MyHomePageState extends State<MyHomePage> {
       // so that the display can reflect the updated values. If we changed
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
-      _counter++;
+      _counter += 5;
     });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
   }
 
   /// Lint rule warning: always_declare_return_types
   /// The method '_buildTextWidget' should have a return type but doesn't.
   /// Try adding a return type to the method.
-  _buildTextWidget(String text) => Text(text);
+  Widget _buildTextWidget(String text) => Text(text);
 
   @override
   // This method is rerun every time setState is called, for instance as done
   // by the _incrementCounter method above.
   Widget build(BuildContext context) {
-    // print('printing for debugging');
+    final theme = Theme.of(context);
+
+    logger.finest('printing for debugging');
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: theme.colorScheme.primary,
         title: Text(widget.title),
       ),
       body: Center(
