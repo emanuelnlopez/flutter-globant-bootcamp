@@ -1,0 +1,10 @@
+linter:
+  rules:
+    - always_declare_return_types
+    - annotate_overrides
+    - avoid_empty_else
+    - avoid_print
+    - avoid_relative_lib_imports
+    - avoid_return_types_on_setters
+    - avoid_unnecessary_containers
+    - sized_box_for_whitespace
