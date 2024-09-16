@@ -2,6 +2,14 @@
 
 Repositorio del Bootcamp de Flutter dictado en Globant Bahía Blanca durante Septiembre/Octubre de 2024.
 
+## Clase #03: 16/09/2024
+
+- Presentación: [clase03.pdf](https://github.com/emanuelnlopez/flutter-globant-bootcamp/blob/main/clase03/clase03.pdf)
+- App ejemplo InheritedWidget Counter: [inherited_widget_samples](https://github.com/emanuelnlopez/flutter-globant-bootcamp/blob/main/clase03/inherited_widget_samples)
+- App ejemplo Provider Counter: [provider_counter](https://github.com/emanuelnlopez/flutter-globant-bootcamp/blob/main/clase03/provider_counter)
+- App ejemplo Provider Task List: [provider_todo](https://github.com/emanuelnlopez/flutter-globant-bootcamp/blob/main/clase03/provider_todo)
+- App ejemplo InheritedWidget StreamController Counter: [inherited_widget_stream_counter](https://github.com/emanuelnlopez/flutter-globant-bootcamp/blob/main/clase03/inherited_widget_stream_counter)
+
 ## Clase #02: 12/09/2024
 
 - Presentación: [clase02.pdf](https://github.com/emanuelnlopez/flutter-globant-bootcamp/blob/main/clase02/clase02.pdf)
