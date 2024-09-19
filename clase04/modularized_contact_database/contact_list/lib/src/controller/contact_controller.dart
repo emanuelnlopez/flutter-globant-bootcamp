@@ -24,15 +24,6 @@ class ContactController implements Disposable {
     }
   }
 
-  void create(Contact contact) async {
-    try {
-      final contacts = await _contactRepository.getAll();
-      _contactStreamController.add(contacts);
-    } catch (error) {
-      _contactStreamController.addError(error);
-    }
-  }
-
   @override
   void dispose() {
     _contactStreamController.close();
