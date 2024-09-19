@@ -2,6 +2,13 @@
 
 Repositorio del Bootcamp de Flutter dictado en Globant Bahía Blanca durante Septiembre/Octubre de 2024.
 
+## Clase #04: 19/09/2024
+
+- Presentación: [clase04.pdf](https://github.com/emanuelnlopez/flutter-globant-bootcamp/blob/main/clase04/clase04.pdf)
+- App ejemplo Contact List: [contact_database](https://github.com/emanuelnlopez/flutter-globant-bootcamp/blob/main/clase04/contact_database)
+- App ejemplo Crypto Prices: [crypto_prices](https://github.com/emanuelnlopez/flutter-globant-bootcamp/blob/main/clase04/crypto_prices)
+- App ejemplo Contact List modularizado: [modularized_contact_database](https://github.com/emanuelnlopez/flutter-globant-bootcamp/blob/main/clase04/modularized_contact_database)
+
 ## Clase #03: 16/09/2024
 
 - Presentación: [clase03.pdf](https://github.com/emanuelnlopez/flutter-globant-bootcamp/blob/main/clase03/clase03.pdf)
