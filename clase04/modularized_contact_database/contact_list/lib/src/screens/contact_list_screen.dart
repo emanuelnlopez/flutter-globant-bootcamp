@@ -1,7 +1,11 @@
 import 'dart:async';
 
-import 'package:contact_database/src/domain/domain.dart';
-import 'package:contact_database/src/presentation/presentation.dart';
+import 'package:contact_list/src/controller/contact_controller.dart';
+import 'package:contact_list/src/screens/contact_form_screen.dart';
+import 'package:contact_list/src/widgets/contact_item.dart';
+import 'package:contact_list/src/widgets/empty_view.dart';
+import 'package:contact_list/src/widgets/loading_view.dart';
+import 'package:contact_list_domain/domain.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -15,7 +19,7 @@ class ContactListScreen extends StatefulWidget {
 class _ContactListScreenState extends State<ContactListScreen> {
   List<Contact>? _contacts;
   late final ContactController _controller;
-  final _subscriptions = <StreamSubscription>[];
+  final List<StreamSubscription> _subscriptions = [];
 
   void _cancelSubscriptions() {
     for (var sub in _subscriptions) {
@@ -49,15 +53,18 @@ class _ContactListScreenState extends State<ContactListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Contact List App')),
+      appBar: AppBar(title: const Text('Modularized Contact List App')),
       body: _ContactListBody(contacts: _contacts),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const ContactFormScreen(),
-          ),
-        ),
+        onPressed: () async {
+          await Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const ContactFormScreen(),
+            ),
+          );
+          //_refreshContacts();
+        },
         child: const Icon(Icons.add),
       ),
     );

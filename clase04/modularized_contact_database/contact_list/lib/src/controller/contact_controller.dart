@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:contact_database/src/domain/domain.dart';
+import 'package:contact_list_domain/domain.dart';
 
 abstract class Disposable {
   void dispose();
@@ -16,6 +16,15 @@ class ContactController implements Disposable {
   Stream<List<Contact>> get contactStream => _contactStreamController.stream;
 
   void getAll() async {
+    try {
+      final contacts = await _contactRepository.getAll();
+      _contactStreamController.add(contacts);
+    } catch (error) {
+      _contactStreamController.addError(error);
+    }
+  }
+
+  void create(Contact contact) async {
     try {
       final contacts = await _contactRepository.getAll();
       _contactStreamController.add(contacts);

@@ -1,0 +1,28 @@
+name: contact_list
+description: "A new Flutter project."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.4 <4.0.0'
+
+dependencies:
+  contact_list_data:
+    path: ../contact_list_data
+  contact_list_domain:
+    path: ../contact_list_domain
+  flutter:
+    sdk: flutter
+  intl: ^0.19.0
+  lottie: ^3.1.2
+  provider: ^6.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/animations/
