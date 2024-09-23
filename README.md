@@ -2,6 +2,13 @@
 
 Repositorio del Bootcamp de Flutter dictado en Globant Bahía Blanca durante Septiembre/Octubre de 2024.
 
+## Clase #05: 23/09/2024
+
+- Presentación: [clase05.pdf](https://github.com/emanuelnlopez/flutter-globant-bootcamp/blob/main/clase05/clase05.pdf)
+- App ejemplo Named Routes: [named_routes](https://github.com/emanuelnlopez/flutter-globant-bootcamp/blob/main/clase05/named_routes)
+- App ejemplo GoRouter: [go_router_example](https://github.com/emanuelnlopez/flutter-globant-bootcamp/blob/main/clase05/go_router_example)
+- App ejemplo build_runner: [crypto_prices_build_runner](https://github.com/emanuelnlopez/flutter-globant-bootcamp/blob/main/clase05/crypto_prices_build_runner)
+
 ## Clase #04: 19/09/2024
 
 - Presentación: [clase04.pdf](https://github.com/emanuelnlopez/flutter-globant-bootcamp/blob/main/clase04/clase04.pdf)
