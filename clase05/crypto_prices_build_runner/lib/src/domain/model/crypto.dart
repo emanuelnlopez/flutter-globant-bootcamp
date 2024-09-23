@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+// TODO: Ejecutar `flutter pub run build_runner build` para generar el código  necesario
 part 'crypto.g.dart';
 
 @JsonSerializable()
@@ -59,8 +60,10 @@ class Crypto {
     required this.atlDate,
   });
 
+  // TODO: Ejecutar `flutter pub run build_runner build` para generar el código necesario
   factory Crypto.fromJson(Map<String, dynamic> json) => _$CryptoFromJson(json);
 
+  // TODO: Ejecutar `flutter pub run build_runner build` para generar el código necesario
   Map<String, dynamic> toJson() => _$CryptoToJson(this);
 
   static List<Crypto> fromDynamicList(dynamic list) {
