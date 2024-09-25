@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "228740466724",
+    "project_id": "flutter-firestore-polls",
+    "storage_bucket": "flutter-firestore-polls.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:228740466724:android:41547da8958b7381bb30b1",
+        "android_client_info": {
+          "package_name": "com.example.firestore_polls"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1T6aFnTzNiqmjPGREglZ3AmIlt3kB8TU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
