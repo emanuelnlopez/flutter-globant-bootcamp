@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "878878886989",
+    "project_id": "globant-flutter-contact-list",
+    "storage_bucket": "globant-flutter-contact-list.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:878878886989:android:ccb43bfe8b8d296df56004",
+        "android_client_info": {
+          "package_name": "com.example.contact_list_firestore"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdMVGGC6tA0Fgbvwg63k8o8lP_AfpUcEE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
