@@ -23,4 +23,12 @@ class MethodChannelAndroidPlugin extends AndroidPluginPlatform {
         await methodChannel.invokeMethod<String>('getDeviceName');
     return deviceName;
   }
+
+  @override
+  Future<void> setScreenshotEnabled(bool enabled) async {
+    await methodChannel.invokeMethod(
+      'setScreenshotEnabled',
+      {'enabled': enabled},
+    );
+  }
 }

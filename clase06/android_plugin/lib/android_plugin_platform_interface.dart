@@ -30,4 +30,10 @@ abstract class AndroidPluginPlatform extends PlatformInterface {
   Future<String?> getDeviceName() {
     throw UnimplementedError('getDeviceName() has not been implemented.');
   }
+
+  Future<void> setScreenshotEnabled(bool enabled) async {
+    throw UnimplementedError(
+      'setScreenshotEnabled() has not been implemented.',
+    );
+  }
 }

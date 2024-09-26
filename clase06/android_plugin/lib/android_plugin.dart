@@ -27,4 +27,8 @@ class AndroidPlugin {
   Future<String?> getDeviceName() {
     return AndroidPluginPlatform.instance.getDeviceName();
   }
+
+  Future<void> setScreenshotEnabled(bool enabled) {
+    return AndroidPluginPlatform.instance.setScreenshotEnabled(enabled);
+  }
 }
