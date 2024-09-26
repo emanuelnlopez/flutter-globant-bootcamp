@@ -8,3 +8,12 @@ class AndroidPlugin {
       'getPlatformVersion',
     );
     return version;
+  }
+
+  Future<String?> getDeviceName() async {
+    final deviceName = await methodChannel.invokeMethod<String>(
+      'getDeviceName',
+    );
+    return deviceName;
+  }
+}

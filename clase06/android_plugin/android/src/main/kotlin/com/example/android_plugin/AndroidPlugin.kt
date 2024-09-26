@@ -2,6 +2,7 @@ package com.example.android_plugin
 
 import androidx.annotation.NonNull
 
+import android.os.Build
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
@@ -24,6 +25,8 @@ class AndroidPlugin: FlutterPlugin, MethodCallHandler {
   override fun onMethodCall(call: MethodCall, result: Result) {
     if (call.method == "getPlatformVersion") {
       result.success("Android ${android.os.Build.VERSION.RELEASE}")
+    } else if (call.method == "getDeviceName") {
+      result.success("${Build.BRAND} ${Build.MODEL}")
     } else {
       result.notImplemented()
     }
