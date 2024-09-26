@@ -32,7 +32,8 @@ class PollResults extends StatelessWidget {
                     '${entry.value} votes (${poll.getPercentage(entry.key).toStringAsFixed(2)}%)',
                   ),
                   LinearProgressIndicator(
-                      value: poll.getPercentage(entry.key) / 100),
+                    value: poll.getPercentage(entry.key) / 100,
+                  ),
                 ],
               ),
             ),
