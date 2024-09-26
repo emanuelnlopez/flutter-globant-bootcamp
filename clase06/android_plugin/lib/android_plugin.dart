@@ -16,4 +16,11 @@ class AndroidPlugin {
     );
     return deviceName;
   }
+
+  Future<void> setScreenshotEnabled(bool enabled) async {
+    await methodChannel.invokeMethod(
+      'setScreenshotEnabled',
+      {'enabled': enabled},
+    );
+  }
 }

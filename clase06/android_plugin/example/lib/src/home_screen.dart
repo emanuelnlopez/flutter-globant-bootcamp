@@ -10,9 +10,11 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  String _platformVersion = 'Unknown';
-  String _deviceName = 'Unknown';
   final _androidPlugin = AndroidPlugin();
+
+  var _deviceName = 'Unknown';
+  var _platformVersion = 'Unknown';
+  var _screenshotsEnabled = true;
 
   @override
   void initState() {
@@ -62,6 +64,20 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             _NameValueText(name: 'OS Version: ', value: _platformVersion),
             _NameValueText(name: 'Device Name: ', value: _deviceName),
+            _NameValueText(
+              name: 'Screenshots: ',
+              value: _screenshotsEnabled ? 'ENABLED' : 'DISABLED',
+            ),
+            _EnableScreenshotsButton(
+              screenshotsEnabled: _screenshotsEnabled,
+              onPressed: () async {
+                _screenshotsEnabled = !_screenshotsEnabled;
+                await _androidPlugin.setScreenshotEnabled(
+                  _screenshotsEnabled,
+                );
+                setState(() {});
+              },
+            ),
           ],
         ),
       ),
@@ -93,6 +109,33 @@ class _NameValueText extends StatelessWidget {
               style: textTheme.titleLarge,
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class _EnableScreenshotsButton extends StatelessWidget {
+  const _EnableScreenshotsButton({
+    required this.screenshotsEnabled,
+    required this.onPressed,
+  });
+
+  final bool screenshotsEnabled;
+  final VoidCallback onPressed;
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      width: double.infinity,
+      child: ElevatedButton(
+        onPressed: onPressed,
+        child: Text(
+          screenshotsEnabled ? 'DISABLE Screenshots' : 'ENABLE Screenshots',
+          style: theme.textTheme.titleMedium?.copyWith(
+            color: screenshotsEnabled ? Colors.red : Colors.green,
+          ),
         ),
       ),
     );
