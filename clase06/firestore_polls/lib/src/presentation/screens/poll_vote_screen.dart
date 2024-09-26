@@ -27,7 +27,10 @@ class _PollVoteScreenState extends State<PollVoteScreen> {
     _pollController = context.read<PollController>();
     _pollController.pollStream
         .where((poll) => poll.id == widget.pollId)
-        .listen((poll) => setState(() => _poll = poll));
+        .listen((poll) => setState(() {
+              _poll = poll;
+              _selectedOption = null;
+            }));
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _pollController.firePoll(widget.pollId);
