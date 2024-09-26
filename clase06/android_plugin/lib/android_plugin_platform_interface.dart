@@ -26,4 +26,8 @@ abstract class AndroidPluginPlatform extends PlatformInterface {
   Future<String?> getPlatformVersion() {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
+
+  Future<String?> getDeviceName() {
+    throw UnimplementedError('getDeviceName() has not been implemented.');
+  }
 }

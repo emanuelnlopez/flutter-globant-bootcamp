@@ -23,4 +23,8 @@ class AndroidPlugin {
       {'enabled': enabled},
     );
   }
+
+  Future<String?> getDeviceName() {
+    return AndroidPluginPlatform.instance.getDeviceName();
+  }
 }

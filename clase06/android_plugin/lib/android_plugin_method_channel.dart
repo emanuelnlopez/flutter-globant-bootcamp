@@ -11,7 +11,16 @@ class MethodChannelAndroidPlugin extends AndroidPluginPlatform {
 
   @override
   Future<String?> getPlatformVersion() async {
-    final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
+    final version = await methodChannel.invokeMethod<String>(
+      'getPlatformVersion',
+    );
     return version;
+  }
+
+  @override
+  Future<String?> getDeviceName() async {
+    final deviceName =
+        await methodChannel.invokeMethod<String>('getDeviceName');
+    return deviceName;
   }
 }
