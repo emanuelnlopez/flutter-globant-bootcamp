@@ -16,4 +16,8 @@ class AndroidPlugin {
     );
     return deviceName;
   }
+
+  Future<String?> getDeviceName() {
+    return AndroidPluginPlatform.instance.getDeviceName();
+  }
 }
