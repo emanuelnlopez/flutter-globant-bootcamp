@@ -11,6 +11,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   String _platformVersion = 'Unknown';
+  String _deviceName = 'Unknown';
   final _androidPlugin = AndroidPlugin();
 
   @override
@@ -31,6 +32,14 @@ class _HomeScreenState extends State<HomeScreen> {
       platformVersion = 'Failed to get platform version.';
     }
 
+    String deviceName;
+    try {
+      deviceName =
+          await _androidPlugin.getDeviceName() ?? 'Unknown device name';
+    } on PlatformException {
+      deviceName = 'Failed to get device name.';
+    }
+
     // If the widget was removed from the tree while the asynchronous platform
     // message was in flight, we want to discard the reply rather than calling
     // setState to update our non-existent appearance.
@@ -38,6 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     setState(() {
       _platformVersion = platformVersion;
+      _deviceName = deviceName;
     });
   }
 
@@ -51,6 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             _NameValueText(name: 'OS Version: ', value: _platformVersion),
+            _NameValueText(name: 'Device Name: ', value: _deviceName),
           ],
         ),
       ),
