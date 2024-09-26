@@ -1,5 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firestore_polls/src/data/repository/firestore_poll_repository.dart';
+import 'package:firestore_polls/src/data/data.dart';
 import 'package:firestore_polls/src/presentation/presentation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -16,8 +16,19 @@ void main() async {
   );
 
   runApp(
-    Provider(
-      create: (_) => PollController(pollRepository: FirestorePollRepository()),
+    MultiProvider(
+      providers: [
+        Provider.value(
+          value: PollController(
+            pollRepository: FirestorePollRepository(),
+          ),
+        ),
+        Provider.value(
+          value: AppSettingsController(
+            appSettingsRepository: FirestoreAppSettingsRepository(),
+          ),
+        ),
+      ],
       child: const FirestorePollApp(),
     ),
   );

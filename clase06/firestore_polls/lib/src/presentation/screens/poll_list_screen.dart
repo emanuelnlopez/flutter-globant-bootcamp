@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:firestore_polls/src/domain/domain.dart';
 import 'package:firestore_polls/src/presentation/presentation.dart';
 import 'package:flutter/material.dart';
@@ -12,10 +14,26 @@ class PollListScreen extends StatefulWidget {
 
 class _PollListScreenState extends State<PollListScreen> {
   late final PollController _pollController;
+  final _subscriptions = <StreamSubscription>[];
+  var _create = true;
+
+  void _cancelSubscriptions() {
+    for (var sub in _subscriptions) {
+      sub.cancel();
+    }
+
+    _subscriptions.clear();
+  }
 
   @override
   void initState() {
     super.initState();
+    _cancelSubscriptions();
+    _subscriptions.add(
+        context.read<AppSettingsController>().settingsStream.listen((settings) {
+      setState(() => _create = settings.create);
+    }));
+
     _pollController = context.read<PollController>();
   }
 
@@ -54,14 +72,24 @@ class _PollListScreenState extends State<PollListScreen> {
           return result;
         },
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const CreatePollScreen()),
-          );
-        },
-        child: const Icon(Icons.add),
+      floatingActionButton: AnimatedSwitcher(
+        duration: const Duration(milliseconds: 500),
+        child: AnimatedOpacity(
+          opacity: _create ? 1.0 : 0.0,
+          duration: const Duration(milliseconds: 500),
+          child: FloatingActionButton(
+            onPressed: !_create
+                ? null
+                : () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const CreatePollScreen()),
+                    );
+                  },
+            child: const Icon(Icons.add),
+          ),
+        ),
       ),
     );
   }
