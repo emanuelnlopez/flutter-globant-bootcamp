@@ -1,4 +1,5 @@
 export 'controllers/poll_controller.dart';
+export 'controllers/settings_controller.dart';
 export 'screens/create_poll_screen.dart';
 export 'screens/poll_list_screen.dart';
 export 'screens/poll_vote_screen.dart';

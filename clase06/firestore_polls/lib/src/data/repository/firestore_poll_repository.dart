@@ -11,17 +11,19 @@ abstract class Disposable {
 class FirestorePollRepository extends Disposable implements PollRepository {
   FirestorePollRepository() {
     _clearSubscriptions();
-    _firestoreDatabase
-        .collection('polls')
-        .snapshots()
-        .listen((snapshot) => _parsePolls(snapshot));
+    _subscriptions.add(
+      _firestoreDatabase
+          .collection('polls')
+          .snapshots()
+          .listen((snapshot) => _parsePolls(snapshot)),
+    );
   }
 
   final _firestoreDatabase = FirebaseFirestore.instance;
   final _polls = <String, Poll>{};
   final _pollStreamController = StreamController<Poll>.broadcast();
   final _pollsStreamController = StreamController<List<Poll>>.broadcast();
-  final _subscriptions = <String, StreamSubscription>{};
+  final _subscriptions = <StreamSubscription>[];
 
   @override
   Stream<Poll> get pollStream => _pollStreamController.stream;
@@ -72,8 +74,8 @@ class FirestorePollRepository extends Disposable implements PollRepository {
   }
 
   void _clearSubscriptions() {
-    for (var sub in _subscriptions.entries) {
-      sub.value.cancel();
+    for (var sub in _subscriptions) {
+      sub.cancel();
     }
 
     _subscriptions.clear();
