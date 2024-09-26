@@ -2,6 +2,7 @@ import 'package:flutter/services.dart';
 
 class AndroidPlugin {
   final methodChannel = const MethodChannel('android_plugin');
+  final networkChannel = const EventChannel('network_status');
 
   Future<String?> getPlatformVersion() async {
     final version = await methodChannel.invokeMethod<String>(
@@ -24,11 +25,9 @@ class AndroidPlugin {
     );
   }
 
-  Future<String?> getDeviceName() {
-    return AndroidPluginPlatform.instance.getDeviceName();
-  }
-
-  Future<void> setScreenshotEnabled(bool enabled) {
-    return AndroidPluginPlatform.instance.setScreenshotEnabled(enabled);
+  Stream<bool> get networkStatusStream {
+    return networkChannel
+        .receiveBroadcastStream()
+        .map<bool>((dynamic event) => event as bool);
   }
 }
