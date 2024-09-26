@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:android_plugin/android_plugin.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -15,6 +17,22 @@ class _HomeScreenState extends State<HomeScreen> {
   var _deviceName = 'Unknown';
   var _platformVersion = 'Unknown';
   var _screenshotsEnabled = true;
+  var _isNetworkAvailable = true;
+  final _subscriptions = <StreamSubscription>[];
+
+  void _cancelSubscriptions() {
+    for (var sub in _subscriptions) {
+      sub.cancel();
+    }
+
+    _subscriptions.clear();
+  }
+
+  @override
+  void dispose() {
+    _cancelSubscriptions();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -41,6 +59,12 @@ class _HomeScreenState extends State<HomeScreen> {
     } on PlatformException {
       deviceName = 'Failed to get device name.';
     }
+
+    _subscriptions.add(
+      _androidPlugin.networkStatusStream.listen(
+        (bool isConnected) => setState(() => _isNetworkAvailable = isConnected),
+      ),
+    );
 
     // If the widget was removed from the tree while the asynchronous platform
     // message was in flight, we want to discard the reply rather than calling
@@ -77,6 +101,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 );
                 setState(() {});
               },
+            ),
+            _NameValueText(
+              name: 'Network: ',
+              value: _isNetworkAvailable ? 'AVAILABLE' : 'NOT AVAILABLE',
             ),
           ],
         ),
