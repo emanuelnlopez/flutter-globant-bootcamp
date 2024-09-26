@@ -2,6 +2,13 @@
 
 Repositorio del Bootcamp de Flutter dictado en Globant Bahía Blanca durante Septiembre/Octubre de 2024.
 
+## Clase #06: 29/09/2024
+
+- Presentación: [clase06.pdf](https://github.com/emanuelnlopez/flutter-globant-bootcamp/blob/main/clase06/clase06.pdf)
+- App ejemplo Contact List con Firestore: [contact_list_firestore](https://github.com/emanuelnlopez/flutter-globant-bootcamp/blob/main/clase06/contact_list_firestore)
+- App ejemplo Firestore Polls: [firestore_polls](https://github.com/emanuelnlopez/flutter-globant-bootcamp/blob/main/clase06/firestore_polls)
+- Plugin para Android de ejemlo: [android_plugin](https://github.com/emanuelnlopez/flutter-globant-bootcamp/blob/main/clase06/android_plugin)
+
 ## Clase #05: 23/09/2024
 
 - Presentación: [clase05.pdf](https://github.com/emanuelnlopez/flutter-globant-bootcamp/blob/main/clase05/clase05.pdf)
