@@ -8,5 +8,3 @@ class AndroidPlugin {
       'getPlatformVersion',
     );
     return version;
-  }
-}
