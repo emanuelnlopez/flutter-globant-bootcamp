@@ -2,7 +2,15 @@
 
 Repositorio del Bootcamp de Flutter dictado en Globant Bahía Blanca durante Septiembre/Octubre de 2024.
 
-## Clase #06: 29/09/2024
+## Clase #07: 30/09/2024
+
+- Presentación: [clase07.pdf](https://github.com/emanuelnlopez/flutter-globant-bootcamp/blob/main/clase07/clase07.pdf)
+- App ejemplo Animations: [animations](https://github.com/emanuelnlopez/flutter-globant-bootcamp/blob/main/clase07/animations)
+- App ejemplo Animations Official: [animations_official](https://github.com/emanuelnlopez/flutter-globant-bootcamp/blob/main/clase07/animations_official)
+- App ejemplo Custom Drawer: [custom_drawer](https://github.com/emanuelnlopez/flutter-globant-bootcamp/blob/main/clase07/custom_drawer)
+- App ejemplo Flight Survey: [flight_survey](https://github.com/emanuelnlopez/flutter-globant-bootcamp/blob/main/clase07/flight_survey)
+
+## Clase #06: 26/09/2024
 
 - Presentación: [clase06.pdf](https://github.com/emanuelnlopez/flutter-globant-bootcamp/blob/main/clase06/clase06.pdf)
 - App ejemplo Contact List con Firestore: [contact_list_firestore](https://github.com/emanuelnlopez/flutter-globant-bootcamp/blob/main/clase06/contact_list_firestore)
