@@ -1,1 +1,3 @@
-export 'counter_screen.dart';
+export 'screens/album_screen.dart';
+export 'screens/counter_screen.dart';
+export 'screens/index_screen.dart';
