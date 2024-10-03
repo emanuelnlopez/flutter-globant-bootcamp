@@ -39,6 +39,22 @@ class IndexScreen extends StatelessWidget {
             title: const Text('Album'),
             trailing: const Icon(Icons.chevron_right),
           ),
+          ListTile(
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const TestingScreen(
+                  title: 'Screen title',
+                  message: 'Screen message',
+                ),
+              ),
+            ),
+            subtitle: const Text(
+              'Pantalla que muestra el titulo y mensaje pasado por parámetro',
+            ),
+            title: const Text('Pantalla utilizada en Widget test'),
+            trailing: const Icon(Icons.chevron_right),
+          ),
         ],
       )),
     );
