@@ -37,6 +37,12 @@ class _CounterScreenState extends State<CounterScreen> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        ///
+        /// Key agregado para ser usado en las pruebas de integración
+        ///
+        /// Provide a Key to this button. This allows finding this
+        /// specific button inside the test suite, and tapping it.
+        key: const ValueKey('increment'),
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),

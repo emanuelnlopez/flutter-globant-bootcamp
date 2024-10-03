@@ -14,6 +14,12 @@ class IndexScreen extends StatelessWidget {
           child: Column(
         children: [
           ListTile(
+            ///
+            /// Key agregado para ser usado en las pruebas de integración
+            ///
+            /// Provide a Key to this button. This allows finding this
+            /// specific widget inside the test suite, and tapping it.
+            key: const ValueKey('counter_screen'),
             onTap: () => Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => const CounterScreen()),
