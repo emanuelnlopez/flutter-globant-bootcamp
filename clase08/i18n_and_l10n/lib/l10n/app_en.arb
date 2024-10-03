@@ -1,0 +1,11 @@
+{
+  "@@locale": "en",
+  "locale": "Locale: {locale}",
+  "home_screen_title": "Demo i18n y l10n",
+  "hello_world": "Hello World!",
+  "date":"Date: {date}",
+  "time":"Time: {time}",
+  "currency":"Curency: {currency}",
+  "currency_symbol":"USD",
+  "percentage":"Porcentage: {percetage}"
+}
